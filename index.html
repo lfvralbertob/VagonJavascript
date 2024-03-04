@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-    <script src="https://app.vagon.io/vagonsdk.js"></script>
-    <title>Test Vagon JS</title>
 </head>
+<style>
+    @media only screen and (orientation: landscape) {
+        .container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 40.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+
+    }
+    @media only screen and (orientation: portrait) {
+        .container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 211.11%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+    }
+    .iframe-responsive {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
 <body>
-    <iframe id="vagonFrame" allow="microphone  *; clipboard-read *; clipboard-write *; encrypted-media *;" src="https://streams.vagon.io/streams/59d728f5-984b-4a35-8796-b438c17edbd1 "sandbox="allow-pointer-lock"/>
+<div class="container">
+    <iframe id="vagonFrame" allow="microphone  *; clipboard-read *; clipboard-write *; encrypted-media *;" src="https://streams.vagon.io/streams/59d728f5-984b-4a35-8796-b438c17edbd1 " class="iframe-responsive"/>
+</div>
 </body>
 </html>
